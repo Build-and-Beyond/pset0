@@ -9,20 +9,38 @@ files:
     - ".git"
     - ".devcontainer"
   require:
-    - game.py
+    - namaste.py
+    - namasteplus.py
+    - translator.py
+    - morse.py
 visible_tests:
-  - name: "game.py runs without errors"
-    command: "python3 game.py"
-    input: ""
+  - name: "namaste.py runs without errors"
+    command: "python3 namaste.py"
+    input: "Aarav\n"
     expected:
-      contains: "---"
-  - name: "game accepts valid input"
-    command: "python3 game.py"
-    input: "A1\n"
+      contains: "Namaste"
+  - name: "namaste.py outputs a greeting"
+    command: "python3 namaste.py"
+    input: "Tanishka\n"
     expected:
-      not_contains: "Error"
-  - name: "game handles empty input"
-    command: "python3 game.py"
-    input: "\n"
+      contains: "Tanishka"
+  - name: "namasteplus.py runs without errors"
+    command: "python3 namasteplus.py"
+    input: "Ravi\nTamil\n"
     expected:
       not_contains: "Traceback"
+  - name: "translator.py runs without errors"
+    command: "python3 translator.py"
+    input: "fr that was mid\n"
+    expected:
+      not_contains: "Traceback"
+  - name: "morse.py runs without errors"
+    command: "python3 morse.py"
+    input: "SOS\n"
+    expected:
+      not_contains: "Traceback"
+  - name: "morse.py produces Morse output"
+    command: "python3 morse.py"
+    input: "SOS\n"
+    expected:
+      regex: "[.-]{2,}"
