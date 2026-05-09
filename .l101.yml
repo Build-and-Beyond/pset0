@@ -1,0 +1,28 @@
+course: logic101
+pset: pset0
+files:
+  include:
+    - "*.py"
+  exclude:
+    - "__pycache__"
+    - "*.pyc"
+    - ".git"
+    - ".devcontainer"
+  require:
+    - game.py
+visible_tests:
+  - name: "game.py runs without errors"
+    command: "python3 game.py"
+    input: ""
+    expected:
+      contains: "---"
+  - name: "game accepts valid input"
+    command: "python3 game.py"
+    input: "A1\n"
+    expected:
+      not_contains: "Error"
+  - name: "game handles empty input"
+    command: "python3 game.py"
+    input: "\n"
+    expected:
+      not_contains: "Traceback"
