@@ -11,8 +11,7 @@ files:
   require:
     - namaste.py
     - namasteplus.py
-    - translator.py
-    - morse.py
+    - parity.py
 visible_tests:
   - name: "namaste.py runs without errors"
     command: "python3 namaste.py"
@@ -26,21 +25,21 @@ visible_tests:
       contains: "Tanishka"
   - name: "namasteplus.py runs without errors"
     command: "python3 namasteplus.py"
-    input: "Ravi\nTamil\n"
+    input: "Ravi\nHindi\n"
     expected:
       not_contains: "Traceback"
-  - name: "translator.py runs without errors"
-    command: "python3 translator.py"
-    input: "fr that was mid\n"
+  - name: "namasteplus.py greets correctly"
+    command: "python3 namasteplus.py"
+    input: "Ravi\nHindi\n"
+    expected:
+      contains: "Namaste"
+  - name: "parity.py runs without errors"
+    command: "python3 parity.py"
+    input: "10101\n"
     expected:
       not_contains: "Traceback"
-  - name: "morse.py runs without errors"
-    command: "python3 morse.py"
-    input: "SOS\n"
+  - name: "parity.py detects parity"
+    command: "python3 parity.py"
+    input: "10101\n"
     expected:
-      not_contains: "Traceback"
-  - name: "morse.py produces Morse output"
-    command: "python3 morse.py"
-    input: "SOS\n"
-    expected:
-      regex: "[.-]{2,}"
+      contains: "odd"
