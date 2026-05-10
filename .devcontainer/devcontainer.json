@@ -1,7 +1,7 @@
 {
   "name": "Logic101 Environment",
   "image": "mcr.microsoft.com/devcontainers/python:3.12",
-  "postCreateCommand": "pip install l101 && l101 login",
+  "postCreateCommand": "bash .devcontainer/postCreateCommand.sh",
   "forwardPorts": [8000],
   "customizations": {
     "vscode": {

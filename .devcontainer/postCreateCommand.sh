@@ -1,7 +1,10 @@
 #!/bin/bash
 set -e
 
-echo "=== Logic101 Setup ==="
+echo "========================================="
+echo "  Welcome to Logic101"
+echo "========================================="
+echo ""
 
 pip install --upgrade pip 2>/dev/null
 pip install l101 2>/dev/null || pip install -e /workspaces/l101 2>/dev/null || true
@@ -13,8 +16,17 @@ if l101 status > /dev/null 2>&1; then
 else
     echo ""
     echo "Welcome to Logic101!"
-    echo "Please run 'l101 login' to authenticate with GitHub."
-    echo "This is required before you can pull problem sets or submit work."
+    echo ""
+    echo "Before you start coding, authenticate with GitHub:"
+    echo ""
+    echo "  l101 login"
+    echo ""
+    echo "Then read the problems on the website:"
+    echo "  https://logic101.dhritikrishna.me/psets/"
+    echo ""
+    echo "When ready, test and submit your work:"
+    echo "  l101 test namaste.py"
+    echo "  l101 submit pset0"
     echo ""
 fi
 
