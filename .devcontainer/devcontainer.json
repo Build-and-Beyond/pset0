@@ -8,14 +8,18 @@
       "extensions": [
         "ms-python.python",
         "ms-python.vscode-pylance",
-        "ms-python.debugpy"
+        "ms-python.debugpy",
+        "CS50.ddb50",
+        "!GitHub.copilot-chat"
       ],
       "settings": {
         "python.defaultInterpreterPath": "/usr/bin/python3",
         "python.linting.enabled": true,
         "editor.formatOnSave": true,
         "files.autoSave": "afterDelay",
-        "files.autoSaveDelay": 1000
+        "files.autoSaveDelay": 1000,
+        "github.copilot-chat.enabled": false,
+        "chat.commandCenter.enabled": false
       }
     }
   },
