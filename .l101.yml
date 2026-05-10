@@ -12,6 +12,9 @@ files:
     - namaste.py
     - namasteplus.py
     - parity.py
+    - temp.py
+    - banknote.py
+    - kingdom.py
 visible_tests:
   - name: "namaste.py runs without errors"
     command: "python3 namaste.py"
@@ -43,3 +46,33 @@ visible_tests:
     input: "10101\n"
     expected:
       contains: "odd"
+  - name: "temp.py runs without errors"
+    command: "python3 temp.py"
+    input: "100\n"
+    expected:
+      not_contains: "Traceback"
+  - name: "temp.py converts correctly"
+    command: "python3 temp.py"
+    input: "0\n"
+    expected:
+      contains: "32"
+  - name: "banknote.py runs without errors"
+    command: "python3 banknote.py"
+    input: "530\n"
+    expected:
+      not_contains: "Traceback"
+  - name: "banknote.py gives correct denominations"
+    command: "python3 banknote.py"
+    input: "530\n"
+    expected:
+      contains: "500"
+  - name: "kingdom.py runs without errors"
+    command: "python3 kingdom.py"
+    input: "300\n"
+    expected:
+      not_contains: "Traceback"
+  - name: "kingdom.py identifies empire"
+    command: "python3 kingdom.py"
+    input: "400\n"
+    expected:
+      contains: "Gupta"
